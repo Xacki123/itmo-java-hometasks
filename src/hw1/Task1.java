@@ -17,9 +17,9 @@ public class Task1 {
 
         // Вычисление скорости в м/с
         double t = 2.0; // время в часах
-        double h = 16.0; // растояние
+        double h = 16.0; // растояние км
         double v; // скорость
         v = h/t*1000/3600;
-        System.out.println("Скорость = " + v + " км/ч");
+        System.out.println("Скорость = " + v + " м/с");
     }
 }
