@@ -6,8 +6,7 @@ public class Task1 {
         int width = 2; // Ширина
         int height = 2; // высота
         int lng = 2; // длинна
-        int s; // площадь
-        s = 2*(width * height + height * lng + lng * width);
+        int s = 2*(width * height + height * lng + lng * width); // площадь
         System.out.println("Площадь = " + s);
 
         // вывести число в кубе
