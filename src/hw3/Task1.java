@@ -48,7 +48,7 @@ public class Task1 {
             detergent -= 0.5;
             plate--;
         }
-        System.out.println( "Тарелок осталось " + plate + " Средства осталось " + detergent );
+        System.out.println("Тарелок осталось " + plate + " Средства осталось " + detergent);
 
 
         // Угадывание числа пользователем
@@ -75,37 +75,33 @@ public class Task1 {
         }
 
 
-//        // программа угадывает число
-//        System.out.println("");
-//        System.out.println("Задание 6");
-//
-//        System.out.println("Загадайте число от 2 до 100");
-//        int userAnswer = in.nextInt();
-//        while (true) { //проверка введённого пользователем значения на соответсвие интервалу
-//            if (userAnswer >= 2 && userAnswer <= 100) {
-//                break;
-//            } else {
-//                System.out.println("Подумай ещё раз над своим числом от 2 до 100");
-//                userAnswer = in.nextInt();
-//            }
-//        }
-//        int mid = 50;
-//        while (true) {
-//            System.out.println("Число равно? " + mid + " ДА - 1, НЕТ - 0");
-//            int answer = in.nextInt();
-//            if (answer == 1) break;
-//            System.out.println("Число больше? " + mid + " ДА - 1, НЕТ - 0");
-//            answer = in.nextInt();
-//            if (answer == 1) {
-//                mid = mid + (100 - mid)/2;
-//            }
-//            else if (answer == 0) {
-//                mid =  (100 - mid)/2 - mid;
-//            }
-//            else {
-//                System.out.println("Не правильно введено значение");
-//            }
-//        }
-//        System.out.println("Ура! я угадал, кожанный мешок, твой ответ - " + mid);
+        // программа угадывает число
+        System.out.println("");
+        System.out.println("Задание 6");
+
+        System.out.println("Загадайте число от 2 до 100");
+        double mid = 100;
+        int programmAnsver = 100;
+        while (true) {
+            System.out.println("Число равно? " + programmAnsver + " ДА - 1, НЕТ - 0");
+            int answer = in.nextInt();
+            if (answer == 1) break;
+            System.out.println("Число больше? " + programmAnsver + " ДА - 1, НЕТ - 0");
+            answer = in.nextInt();
+            if (answer == 1) {
+                programmAnsver = programmAnsver + (int) Math.ceil(mid / 2);
+                mid = mid / 2;
+
+            } else if (answer == 0) {
+                programmAnsver = programmAnsver - (int) Math.ceil(mid / 2);
+                mid = mid / 2;
+            } else {
+                System.out.println("Не правильно введено значение");
+            }
+            if (mid < 1) {
+                mid = 1;
+            }
+        }
+        System.out.println("Ура! я угадал, кожанный мешок, твой ответ - " + programmAnsver);
     }
 }
