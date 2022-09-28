@@ -42,9 +42,26 @@ public class Task1 {
 
         System.out.println("Введите количество тарелок");
         int plate = in.nextInt();
+        while (true){
+            if (plate > 0){
+                break;
+            } else {
+                System.out.println("Введите количество тарелок правильно");
+                plate = in.nextInt();
+            }
+        }
+
         System.out.println("Введите количество средства");
         double detergent = in.nextDouble();
-        while (plate > 0 && detergent > 0) {
+        while (true){
+            if (detergent > 0){
+                break;
+            } else {
+                System.out.println("Введите количество средства правильно");
+                detergent = in.nextInt();
+            }
+        }
+        while (plate > 0 && detergent >= 0.5) {
             detergent -= 0.5;
             plate--;
         }
