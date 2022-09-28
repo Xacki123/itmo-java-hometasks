@@ -106,21 +106,18 @@ public class Task1 {
             System.out.println("Число больше? " + programmAnsver + " ДА - 1, НЕТ - 0");
             answer = in.nextInt();
             if (answer == 1) {
-
                 programmAnsver = programmAnsver + (int) Math.ceil(mid / 2);
                 mid = mid / 2;
 
             } else if (answer == 0) {
                 programmAnsver = programmAnsver - (int) Math.ceil(mid / 2);
                 mid = mid / 2;
-
                 programmAnsver =  programmAnsver + (int) Math.ceil(mid/2);
                 mid = mid/2;
 
             } else if (answer == 0) {
                 programmAnsver = programmAnsver - (int) Math.ceil(mid/2);
                 mid = mid/2;
-
             } else {
                 System.out.println("Не правильно введено значение");
             }
