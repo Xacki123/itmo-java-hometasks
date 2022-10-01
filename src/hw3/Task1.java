@@ -96,35 +96,21 @@ public class Task1 {
         System.out.println("");
         System.out.println("Задание 6");
 
-        System.out.println("Загадайте число от 2 до 100");
-        double mid = 100;
-        int programmAnsver = 100;
-        while (true) {
-            System.out.println("Число равно? " + programmAnsver + " ДА - 1, НЕТ - 0");
-            int answer = in.nextInt();
-            if (answer == 1) break;
-            System.out.println("Число больше? " + programmAnsver + " ДА - 1, НЕТ - 0");
-            answer = in.nextInt();
-            if (answer == 1) {
-                programmAnsver = programmAnsver + (int) Math.ceil(mid / 2);
-                mid = mid / 2;
+        int start = 2;
+        int end = 100;
+        int midl;
 
-            } else if (answer == 0) {
-                programmAnsver = programmAnsver - (int) Math.ceil(mid / 2);
-                mid = mid / 2;
-                programmAnsver =  programmAnsver + (int) Math.ceil(mid/2);
-                mid = mid/2;
-
-            } else if (answer == 0) {
-                programmAnsver = programmAnsver - (int) Math.ceil(mid/2);
-                mid = mid/2;
-            } else {
-                System.out.println("Не правильно введено значение");
-            }
-            if (mid < 1) {
-                mid = 1;
-            }
+        while (true){
+            midl = (end + start)/ 2;
+            System.out.println("Число равно?" + midl);
+            int answ = in.nextInt();
+            if (answ == 1) break;
+            System.out.println("Больше?" + midl);
+            answ = in.nextInt();
+            if (answ == 1) start = midl;
+            else if (answ == 1) end = midl;
         }
-        System.out.println("Ура! я угадал, кожанный мешок, твой ответ - " + programmAnsver);
+        System.out.println("Твоё число = " + midl);
+
     }
 }
