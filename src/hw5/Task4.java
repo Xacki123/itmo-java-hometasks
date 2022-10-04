@@ -7,10 +7,17 @@ public class Task4 {
         // сортировка по длинне слова
         String word = "в предложении все слова разной длины";
         String[] arrStr = word.split(" ");
-        System.out.println("До преобразования");
-        System.out.println(Arrays.toString(arrStr));
-        Arrays.sort(arrStr);
-        System.out.println("После преобразования");
-        System.out.println(Arrays.toString(arrStr));
+        String max = null;
+        for (int i = 0; i < arrStr.length; i++) {
+            if (max == null){
+                max = arrStr[i];
+            }
+            if (max.length() < arrStr[i].length()){
+                max = arrStr[i];
+            }
+
+        }
+        System.out.println("Самое длинное слово");
+        System.out.println(max);
     }
 }
