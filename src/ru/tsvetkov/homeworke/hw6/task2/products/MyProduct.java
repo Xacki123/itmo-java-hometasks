@@ -32,16 +32,24 @@ public class MyProduct {
                 return;
             }
             if (product.getProtein()>maxProtein){
-                throw new IllegalArgumentException("Продукт превышает норму белков");
+                System.out.println("Продукт превышает норму белков");
+                return;
+                //throw new IllegalArgumentException("Продукт превышает норму белков");
             }
             if (product.getFats()>maxFats){
-                throw new IllegalArgumentException("Продукт превышает норму жиров");
+                System.out.println("Продукт превышает норму жиров");
+                return;
+                //throw new IllegalArgumentException("Продукт превышает норму жиров");
             }
             if (product.getCarbohydrates()>maxCarbohydrates){
-                throw new IllegalArgumentException("Продукт превышает норму углеводов");
+                System.out.println("Продукт превышает норму углеводов");
+                return;
+               // throw new IllegalArgumentException("Продукт превышает норму углеводов");
             }
             if (product.getCalories()>maxCalories){
-                throw new IllegalArgumentException("Продукт превышает норму калорий");
+                System.out.println("Продукт превышает норму калорий");
+                return;
+               // throw new IllegalArgumentException("Продукт превышает норму калорий");
             }
         }
     }

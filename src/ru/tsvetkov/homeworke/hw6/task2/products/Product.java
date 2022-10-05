@@ -8,7 +8,7 @@ public class Product {
     private Double calories;
 
     public Product(String name, Double protein, Double fats, Double carbohydrates, Double calories) {
-        this.name = name;
+        setName(name);
         this.protein = protein;
         this.fats = fats;
         this.carbohydrates = carbohydrates;
@@ -16,7 +16,7 @@ public class Product {
     }
 
     public Product(String name, Double protein, Double fats, Double carbohydrates) {
-        this.name = name;
+        setName(name);
         this.protein = protein;
         this.fats = fats;
         this.carbohydrates = carbohydrates;
@@ -24,7 +24,7 @@ public class Product {
 
 
     public Product(String name) {
-        this.name = name;
+        setName(name);
     }
 
     public Product() {
