@@ -35,7 +35,12 @@ public class Application {
         System.out.println(cat1.showMouseCat());
         System.out.println(cat2.showMouseCat());
 
-        cat1.addMouse(mouse5);
+        // драка котов
+        cat1.attackCat(cat2);
+
+        // вывожу кого поймали коты
+        System.out.println(cat1.showMouseCat());
+        System.out.println(cat2.showMouseCat());
 
     }
 }

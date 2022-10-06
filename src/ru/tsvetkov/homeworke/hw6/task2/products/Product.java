@@ -9,17 +9,17 @@ public class Product {
 
     public Product(String name, Double protein, Double fats, Double carbohydrates, Double calories) {
         setName(name);
-        this.protein = protein;
-        this.fats = fats;
-        this.carbohydrates = carbohydrates;
-        this.calories = calories;
+        setProtein(protein);
+        setFats(fats);
+        setCarbohydrates(carbohydrates);
+        setCalories(calories);
     }
 
     public Product(String name, Double protein, Double fats, Double carbohydrates) {
         setName(name);
-        this.protein = protein;
-        this.fats = fats;
-        this.carbohydrates = carbohydrates;
+        setProtein(protein);
+        setFats(fats);
+        setCarbohydrates(carbohydrates);
     }
 
 
@@ -38,18 +38,30 @@ public class Product {
     }
 
     public void setProtein(Double protein) {
+        if (protein < 0.0){
+            throw new IllegalArgumentException("Протеин не может быть отрицательным числом");
+        }
         this.protein = protein;
     }
 
     public void setFats(Double fats) {
+        if (protein < 0.0){
+            throw new IllegalArgumentException("Жиры не могут быть отрицательным числом");
+        }
         this.fats = fats;
     }
 
     public void setCarbohydrates(Double carbohydrates) {
+        if (protein < 0.0){
+            throw new IllegalArgumentException("Углеводы не могут быть отрицательным числом");
+        }
         this.carbohydrates = carbohydrates;
     }
 
     public void setCalories(Double calories) {
+        if (protein < 0.0){
+            throw new IllegalArgumentException("Калории не могут быть отрицательным числом");
+        }
         this.calories = calories;
     }
 

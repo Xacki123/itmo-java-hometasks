@@ -8,31 +8,12 @@ public class Cat {
     private double weight;
     private Mouse[] arrMouse = new Mouse[100];
 
-    public void addMouse(Mouse mouse) {
-        if (speedCat > mouse.getSpeedMouse()) {
-            for (int i = 0; i < arrMouse.length; i++) {
-                if (arrMouse[i] == null) {
-                    arrMouse[i] = mouse;
-                    return;
-                }
-            }
-        }
-        System.out.println("Кот промахнулся");
+    public Cat(String name, double speedCat, double weight) {
+        setName(name);
+        setSpeedCat(speedCat);
+        setWeight(weight);
     }
-
-    public void attackCat(Cat cat) {
-        if (weight > cat.weight) {
-            for (int j = 0; j < cat.arrMouse.length; j++) {
-                if (cat.arrMouse[j] == null){
-                    return;
-                }
-                addMouse(cat.arrMouse[j]);
-                cat.arrMouse[j] = null;
-            }
-        } else {
-            System.out.println("Кот не смог одолеть такого противника");
-        }
-    }
+    public Cat(){}
 
     public void setName(String name) {
         if (name.length() < 3) {
@@ -55,12 +36,32 @@ public class Cat {
         this.weight = weight;
     }
 
-    public Cat(String name, double speedCat, double weight) {
-        setName(name);
-        setSpeedCat(speedCat);
-        setWeight(weight);
+    public void addMouse(Mouse mouse) {
+        if (speedCat > mouse.getSpeedMouse()) {
+            for (int i = 0; i < arrMouse.length; i++) {
+                if (arrMouse[i] == null) {
+                    arrMouse[i] = mouse;
+                    return;
+                }
+            }
+        }
+        System.out.println("Кот "+ name+  " промахнулся");
     }
-    public Cat(){}
+
+    public void attackCat(Cat cat) {
+        if (weight > cat.weight) {
+            for (int j = 0; j < cat.arrMouse.length; j++) {
+                if (cat.arrMouse[j] == null){
+                    return;
+                }
+                addMouse(cat.arrMouse[j]);
+                cat.arrMouse[j] = null;
+            }
+        } else {
+            System.out.println("Кот "+  name + " не смог одолеть такого противника как " + cat.name + " и отступил");
+            cat.attackCat(this);
+        }
+    }
 
     public String showMouseCat(){
         String resoult = "Кот " + name + " поймал: ";

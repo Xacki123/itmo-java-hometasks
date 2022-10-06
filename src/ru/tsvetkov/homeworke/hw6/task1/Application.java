@@ -23,8 +23,6 @@ public class Application {
         rock3.setCountry("Италия");
         rock3.setHeight(2000);
 
-        System.out.println(rock3.toString());
-
         // создаю альпинистов
         Mountaineer mountaineer1 = new Mountaineer();
         mountaineer1.setName("Вован");
@@ -40,25 +38,20 @@ public class Application {
 
         //формирую группы
         Group group1 = new Group();
-        group1.setSetGroup(false);
         group1.setRock(rock1);
         group1.addMountaineer(mountaineer1);
         group1.addMountaineer(mountaineer2);
         group1.addMountaineer(mountaineer3);
+        group1.addMountaineer(mountaineer3);
 
         Group group2 = new Group();
-        group2.setSetGroup(true);
         group2.setRock(rock2);
         group2.addMountaineer(mountaineer1);
         group2.addMountaineer(mountaineer2);
 
         Group group3 = new Group();
-        group3.setSetGroup(true);
         group3.setRock(rock3);
         group3.addMountaineer(mountaineer2);
         group3.addMountaineer(mountaineer3);
-
-        System.out.println(group2.toString());
-
     }
 }

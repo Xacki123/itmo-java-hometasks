@@ -7,21 +7,40 @@ public class MyProduct {
     private Double maxFats;
     private Double maxCarbohydrates;
     private Double maxCalories;
-    private Product[] arrProduct = new Product[3];
+    private Product[] arrProduct;
 
+    public MyProduct(int massLen, Double maxProtein, Double maxFats, Double maxCarbohydrates, Double maxCalories){
+        arrProduct = new Product[massLen];
+        setMaxProtein(maxProtein);
+        setMaxFats(maxFats);
+        setMaxCarbohydrates(maxCarbohydrates);
+        setMaxCalories(maxCalories);
+    }
     public void setMaxProtein(Double maxProtein) {
+        if (maxProtein < 0.0){
+            throw new IllegalArgumentException("max Протеин не может быть отрицательным числом");
+        }
         this.maxProtein = maxProtein;
     }
 
     public void setMaxFats(Double maxFats) {
+        if (maxFats < 0.0){
+            throw new IllegalArgumentException(" max Жиры не могут быть отрицательным числом");
+        }
         this.maxFats = maxFats;
     }
 
     public void setMaxCarbohydrates(Double maxCarbohydrates) {
+        if (maxCarbohydrates < 0.0){
+            throw new IllegalArgumentException("max Углеводы не могут быть отрицательным числом");
+        }
         this.maxCarbohydrates = maxCarbohydrates;
     }
 
     public void setMaxCalories(Double maxCalories) {
+        if (maxCalories < 0.0){
+            throw new IllegalArgumentException("max Калории не могут быть отрицательным числом");
+        }
         this.maxCalories = maxCalories;
     }
 
@@ -32,24 +51,20 @@ public class MyProduct {
                 return;
             }
             if (product.getProtein()>maxProtein){
-                System.out.println("Продукт превышает норму белков");
+                System.out.println("Продукт "+ product.getName() +  " превышает норму белков");
                 return;
-                //throw new IllegalArgumentException("Продукт превышает норму белков");
             }
             if (product.getFats()>maxFats){
-                System.out.println("Продукт превышает норму жиров");
+                System.out.println("Продукт "+ product.getName() + " превышает норму жиров");
                 return;
-                //throw new IllegalArgumentException("Продукт превышает норму жиров");
             }
             if (product.getCarbohydrates()>maxCarbohydrates){
-                System.out.println("Продукт превышает норму углеводов");
+                System.out.println("Продукт "+ product.getName() + " превышает норму углеводов");
                 return;
-               // throw new IllegalArgumentException("Продукт превышает норму углеводов");
             }
             if (product.getCalories()>maxCalories){
-                System.out.println("Продукт превышает норму калорий");
+                System.out.println("Продукт "+ product.getName() + " превышает норму калорий");
                 return;
-               // throw new IllegalArgumentException("Продукт превышает норму калорий");
             }
         }
     }

@@ -12,15 +12,13 @@ public class Application {
         Product product4 = new Product("Изюм",2.0,0.0,68.0,280.0);
 
         // формирую границы
-        MyProduct myProduct = new MyProduct();
-        myProduct.setMaxProtein(12.0);
-        myProduct.setMaxFats(20.0);
-        myProduct.setMaxCarbohydrates(30.0);
-        myProduct.setMaxCalories(100.0);
+        MyProduct myProduct = new MyProduct(3, 12.0, 20.0, 30.0, 100.0);
 
         // заполняю список
         myProduct.addProduct(product1);
+        myProduct.addProduct(product2);
         myProduct.addProduct(product3);
+        myProduct.addProduct(product4);
 
         // вывод продуктов из списка
         System.out.println(myProduct.showProduct());

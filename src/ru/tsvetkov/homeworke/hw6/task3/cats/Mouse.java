@@ -3,8 +3,12 @@ package ru.tsvetkov.homeworke.hw6.task3.cats;
 public class Mouse {
     private double speedMouse;
 
-    public double getSpeedMouse() {
-        return speedMouse;
+    public Mouse(double speedMouse) {
+        setSpeedMouse(speedMouse);
+    }
+    public Mouse(){}
+
+    public double getSpeedMouse() {return speedMouse;
     }
 
     public void setSpeedMouse(double speedMouse) {
@@ -14,10 +18,7 @@ public class Mouse {
         this.speedMouse = speedMouse;
     }
 
-    public Mouse(double speedMouse) {
-        setSpeedMouse(speedMouse);
-    }
-    public Mouse(){}
+
 
     @Override
     public String toString() {
