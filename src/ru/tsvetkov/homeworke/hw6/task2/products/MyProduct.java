@@ -69,14 +69,14 @@ public class MyProduct {
         }
     }
     public String showProduct(){
-        String resault = "";
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < arrProduct.length; i++) {
             if (arrProduct[i] == null){
                 break;
             }
-            resault = resault + arrProduct[i].getName() + " ";
+            sb.append(arrProduct[i].getName()).append(" ");
         }
-        return resault;
+        return sb.toString();
     }
 
     @Override

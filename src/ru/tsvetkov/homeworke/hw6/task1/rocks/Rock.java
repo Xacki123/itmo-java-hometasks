@@ -10,7 +10,7 @@ public class Rock {
     }
 
     public void setName(String name) {
-        if (name.length() < 4){
+        if (name == null || name.length() < 4){
             throw new IllegalArgumentException("Имя горы должно быть не менее 4 символов");
         }
         this.name = name;
@@ -21,7 +21,7 @@ public class Rock {
     }
 
     public void setCountry(String country) {
-        if (country.length() < 4){
+        if (country == null || country.length() < 4){
             throw new IllegalArgumentException("Страна не может быть менее 4 символов");
         }
         this.country = country;

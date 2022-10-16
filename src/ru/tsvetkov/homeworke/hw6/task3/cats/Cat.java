@@ -13,7 +13,9 @@ public class Cat {
         setSpeedCat(speedCat);
         setWeight(weight);
     }
-    public Cat(){}
+
+    public Cat() {
+    }
 
     public void setName(String name) {
         if (name.length() < 3) {
@@ -23,14 +25,14 @@ public class Cat {
     }
 
     public void setSpeedCat(double speedCat) {
-        if (speedCat < 0.0){
+        if (speedCat < 0.0) {
             throw new IllegalArgumentException("Скорость не может быть отрицательной");
         }
         this.speedCat = speedCat;
     }
 
     public void setWeight(double weight) {
-        if (weight < 0.0){
+        if (weight < 0.0) {
             throw new IllegalArgumentException("Вес не может быть отрицательным");
         }
         this.weight = weight;
@@ -45,33 +47,34 @@ public class Cat {
                 }
             }
         }
-        System.out.println("Кот "+ name+  " промахнулся");
+        System.out.println("Кот " + name + " промахнулся");
     }
 
     public void attackCat(Cat cat) {
         if (weight > cat.weight) {
             for (int j = 0; j < cat.arrMouse.length; j++) {
-                if (cat.arrMouse[j] == null){
+                if (cat.arrMouse[j] == null) {
                     return;
                 }
                 addMouse(cat.arrMouse[j]);
                 cat.arrMouse[j] = null;
             }
         } else {
-            System.out.println("Кот "+  name + " не смог одолеть такого противника как " + cat.name + " и отступил");
+            System.out.println("Кот " + name + " не смог одолеть такого противника как " + cat.name + " и отступил");
             cat.attackCat(this);
         }
     }
 
-    public String showMouseCat(){
-        String resoult = "Кот " + name + " поймал: ";
+    public String showMouseCat() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Кот ").append(name).append(" поймал: ");
         for (int i = 0; i < arrMouse.length; i++) {
-            if (arrMouse[i] == null){
+            if (arrMouse[i] == null) {
                 break;
             }
-            resoult = resoult + "Мышь- " + arrMouse[i].getSpeedMouse() + " ";
+            sb.append("Мышь- ").append(arrMouse[i].getSpeedMouse()).append(" ");
         }
-        return resoult;
+        return sb.toString();
     }
 
     @Override
