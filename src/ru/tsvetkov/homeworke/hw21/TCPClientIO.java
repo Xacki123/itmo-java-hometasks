@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class TCPClientIO {
     private final String ip; //адрес серверноц машины
     private final int port; //порт на котором сервер ожидает подключение
-    private String[] command = {"/help", "/count", "/ping", "/exit"};
+
 
     public TCPClientIO(String ip, int port) {
         this.ip = ip;
@@ -31,10 +31,7 @@ public class TCPClientIO {
             String text = scanner.nextLine();
 
             if (("/exit".equalsIgnoreCase(text))) break;
-            if ("/help".equalsIgnoreCase(text)) {
-                helpShow();
-                continue;
-            }
+
             // формирование сообщения
             Message message = new Message(name, text);
 
@@ -55,9 +52,7 @@ public class TCPClientIO {
         }
 
     }
-    public void helpShow(){
-        System.out.println(Arrays.toString(command));
-    }
+
 
     public static void main(String[] args) {
         Properties properties = new Properties();

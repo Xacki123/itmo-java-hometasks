@@ -1,5 +1,6 @@
 package ru.tsvetkov.homeworke.hw21;
 
+import ru.tsvetkov.homeworke.hw21.common.Command;
 import ru.tsvetkov.homeworke.hw21.common.Connection;
 import ru.tsvetkov.homeworke.hw21.common.Message;
 
@@ -32,14 +33,18 @@ public class TCPServerIO {
                 // получение сообщения от клиента
                 Message fromClient = connection.readMessage();
                 System.out.println("От клиента - " + fromClient);
+
+                // вынести в отдельный класс
                 if ("/count".equalsIgnoreCase(fromClient.getText())){
-                    Message message = new Message("Server", "Сообщение от сервера, количество сообщений = " + messages.size());
-                    connection.sendMessage(message);
+                    connection.sendMessage(Command.count(messages));
                     continue;
                 }
                 if ("/ping".equalsIgnoreCase(fromClient.getText())){
-                    Message message = new Message("Server", "Сообщение от сервера, ping = " + (long)(LocalDateTime.now().getNano() - fromClient.getDateTime().getNano()));
-                    connection.sendMessage(message);
+                    connection.sendMessage(Command.ping(fromClient.getDateTime().getNano()));
+                    continue;
+                }
+                if ("/help".equalsIgnoreCase(fromClient.getText())){
+                    connection.sendMessage(Command.help());
                     continue;
                 }
                 messages.add(fromClient);
